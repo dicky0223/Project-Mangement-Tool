@@ -2,8 +2,6 @@
 
 A modern, lightweight project management application built with vanilla JavaScript, HTML, and CSS. ProjectFlow helps you organize projects, track tasks, and visualize your workflow with an intuitive interface and powerful features.
 
-![ProjectFlow Dashboard](https://via.placeholder.com/800x400/21808D/FFFFFF?text=ProjectFlow+Dashboard)
-
 ## ✨ Features
 
 ### 📊 Dashboard Overview
