@@ -208,7 +208,7 @@ ProjectFlow is compatible with all modern browsers:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This tool is developed by Dicky CH HO. Copyright © 2025 Dicky CH HO. All rights reserved.
 
 ## 🙏 Acknowledgments
 
