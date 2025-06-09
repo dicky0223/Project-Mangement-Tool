@@ -1,78 +1,63 @@
-/* 
-   CSS VARIABLES - These are like settings that can be reused throughout the CSS
-   Think of them as a way to store colors, sizes, and other values in one place
-   so you can easily change them later
-*/
 :root {
-  /* COLORS - Define all the colors used in the application */
-  --color-background: rgba(252, 252, 249, 1); /* Main background color (light cream) */
-  --color-surface: rgba(255, 255, 253, 1); /* Color for cards and surfaces (white) */
-  --color-text: rgba(19, 52, 59, 1); /* Main text color (dark blue-gray) */
-  --color-text-secondary: rgba(98, 108, 113, 1); /* Secondary text color (lighter gray) */
-  --color-primary: rgba(33, 128, 141, 1); /* Primary brand color (teal) */
-  --color-primary-hover: rgba(29, 116, 128, 1); /* Primary color when hovering */
-  --color-primary-active: rgba(26, 104, 115, 1); /* Primary color when clicking */
-  --color-secondary: rgba(94, 82, 64, 0.12); /* Secondary color with transparency */
-  --color-secondary-hover: rgba(94, 82, 64, 0.2); /* Secondary hover state */
-  --color-secondary-active: rgba(94, 82, 64, 0.25); /* Secondary active state */
-  --color-border: rgba(94, 82, 64, 0.2); /* Border color */
-  --color-btn-primary-text: rgba(252, 252, 249, 1); /* Text color on primary buttons */
-  --color-card-border: rgba(94, 82, 64, 0.12); /* Border color for cards */
-  --color-card-border-inner: rgba(94, 82, 64, 0.12); /* Inner border color */
-  
-  /* STATUS COLORS - Colors for different states like success, error, etc. */
-  --color-error: rgba(192, 21, 47, 1); /* Red for errors */
-  --color-success: rgba(33, 128, 141, 1); /* Green for success (using primary color) */
-  --color-warning: rgba(168, 75, 47, 1); /* Orange for warnings */
-  --color-info: rgba(98, 108, 113, 1); /* Blue-gray for information */
-  --color-focus-ring: rgba(33, 128, 141, 0.4); /* Color for focus indicators */
-  --color-select-caret: rgba(19, 52, 59, 0.8); /* Color for dropdown arrows */
+  /* Colors */
+  --color-background: rgba(252, 252, 249, 1);
+  --color-surface: rgba(255, 255, 253, 1);
+  --color-text: rgba(19, 52, 59, 1);
+  --color-text-secondary: rgba(98, 108, 113, 1);
+  --color-primary: rgba(33, 128, 141, 1);
+  --color-primary-hover: rgba(29, 116, 128, 1);
+  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-secondary: rgba(94, 82, 64, 0.12);
+  --color-secondary-hover: rgba(94, 82, 64, 0.2);
+  --color-secondary-active: rgba(94, 82, 64, 0.25);
+  --color-border: rgba(94, 82, 64, 0.2);
+  --color-btn-primary-text: rgba(252, 252, 249, 1);
+  --color-card-border: rgba(94, 82, 64, 0.12);
+  --color-card-border-inner: rgba(94, 82, 64, 0.12);
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: rgba(33, 128, 141, 1);
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-select-caret: rgba(19, 52, 59, 0.8);
 
-  /* COMMON STYLE PATTERNS - Reusable style combinations */
-  --focus-ring: 0 0 0 3px var(--color-focus-ring); /* Shadow for focus states */
-  --focus-outline: 2px solid var(--color-primary); /* Outline for focus states */
-  --status-bg-opacity: 0.15; /* Background opacity for status indicators */
-  --status-border-opacity: 0.25; /* Border opacity for status indicators */
-  
-  /* SVG ICONS - Encoded SVG images for dropdown arrows */
+  /* Common style patterns */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-  /* RGB VERSIONS - Same colors but in RGB format for use with opacity */
+  /* RGB versions for opacity control */
   --color-success-rgb: 33, 128, 141;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
 
-  /* TYPOGRAPHY - Font settings */
+  /* Typography */
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Main font stack */
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, monospace; /* Monospace font for code */
-  
-  /* FONT SIZES - Different text sizes */
-  --font-size-xs: 11px; /* Extra small text */
-  --font-size-sm: 12px; /* Small text */
-  --font-size-base: 14px; /* Normal text size */
-  --font-size-md: 14px; /* Medium text (same as base) */
-  --font-size-lg: 16px; /* Large text */
-  --font-size-xl: 18px; /* Extra large text */
-  --font-size-2xl: 20px; /* 2x large text */
-  --font-size-3xl: 24px; /* 3x large text */
-  --font-size-4xl: 30px; /* 4x large text */
-  
-  /* FONT WEIGHTS - How bold the text is */
-  --font-weight-normal: 400; /* Normal weight */
-  --font-weight-medium: 500; /* Medium weight */
-  --font-weight-semibold: 550; /* Semi-bold weight */
-  --font-weight-bold: 600; /* Bold weight */
-  
-  /* LINE HEIGHTS - Space between lines of text */
-  --line-height-tight: 1.2; /* Tight line spacing */
-  --line-height-normal: 1.5; /* Normal line spacing */
-  --letter-spacing-tight: -0.01em; /* Slightly tighter letter spacing */
+    Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
 
-  /* SPACING - Consistent spacing values throughout the app */
+  /* Spacing */
   --space-0: 0;
   --space-1: 1px;
   --space-2: 2px;
@@ -86,59 +71,55 @@
   --space-24: 24px;
   --space-32: 32px;
 
-  /* BORDER RADIUS - How rounded corners are */
-  --radius-sm: 6px; /* Small rounded corners */
-  --radius-base: 8px; /* Normal rounded corners */
-  --radius-md: 10px; /* Medium rounded corners */
-  --radius-lg: 12px; /* Large rounded corners */
-  --radius-full: 9999px; /* Fully rounded (circular) */
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
 
-  /* SHADOWS - Drop shadow effects */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02); /* Extra small shadow */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); /* Small shadow */
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-    0 2px 4px -1px rgba(0, 0, 0, 0.02); /* Medium shadow */
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-    0 4px 6px -2px rgba(0, 0, 0, 0.02); /* Large shadow */
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
   --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03); /* Small inset shadow */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
 
-  /* ANIMATION - Timing for smooth transitions */
-  --duration-fast: 150ms; /* Fast animation duration */
-  --duration-normal: 250ms; /* Normal animation duration */
-  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1); /* Smooth easing function */
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* LAYOUT - Container sizes for responsive design */
-  --container-sm: 640px; /* Small container width */
-  --container-md: 768px; /* Medium container width */
-  --container-lg: 1024px; /* Large container width */
-  --container-xl: 1280px; /* Extra large container width */
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
 }
 
-/* 
-   DARK MODE COLORS - When user prefers dark mode
-   @media (prefers-color-scheme: dark) detects if user's system is set to dark mode
-*/
+/* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Override colors for dark mode */
-    --color-background: rgba(31, 33, 33, 1); /* Dark background */
-    --color-surface: rgba(38, 40, 40, 1); /* Dark surface color */
-    --color-text: rgba(245, 245, 245, 1); /* Light text on dark background */
-    --color-text-secondary: rgba(167, 169, 169, 0.7); /* Lighter secondary text */
-    --color-primary: rgba(50, 184, 198, 1); /* Brighter primary color for dark mode */
+    --color-background: rgba(31, 33, 33, 1);
+    --color-surface: rgba(38, 40, 40, 1);
+    --color-text: rgba(245, 245, 245, 1);
+    --color-text-secondary: rgba(167, 169, 169, 0.7);
+    --color-primary: rgba(50, 184, 198, 1);
     --color-primary-hover: rgba(45, 166, 178, 1);
     --color-primary-active: rgba(41, 150, 161, 1);
     --color-secondary: rgba(119, 124, 124, 0.15);
     --color-secondary-hover: rgba(119, 124, 124, 0.25);
     --color-secondary-active: rgba(119, 124, 124, 0.3);
     --color-border: rgba(119, 124, 124, 0.3);
-    --color-error: rgba(255, 84, 89, 1); /* Brighter error color */
+    --color-error: rgba(255, 84, 89, 1);
     --color-success: rgba(50, 184, 198, 1);
     --color-warning: rgba(230, 129, 97, 1);
     --color-info: rgba(167, 169, 169, 1);
     --color-focus-ring: rgba(50, 184, 198, 0.4);
-    --color-btn-primary-text: rgba(19, 52, 59, 1); /* Dark text on bright buttons */
+    --color-btn-primary-text: rgba(19, 52, 59, 1);
     --color-card-border: rgba(119, 124, 124, 0.2);
     --color-card-border-inner: rgba(119, 124, 124, 0.15);
     --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -147,7 +128,15 @@
     --color-border-secondary: rgba(119, 124, 124, 0.2);
     --color-select-caret: rgba(245, 245, 245, 0.8);
 
-    /* Update RGB versions for dark mode */
+    /* Common style patterns - updated for dark mode */
+    --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    --focus-outline: 2px solid var(--color-primary);
+    --status-bg-opacity: 0.15;
+    --status-border-opacity: 0.25;
+    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    /* RGB versions for dark mode */
     --color-success-rgb: 50, 184, 198;
     --color-error-rgb: 255, 84, 89;
     --color-warning-rgb: 230, 129, 97;
@@ -155,12 +144,8 @@
   }
 }
 
-/* 
-   MANUAL THEME SWITCHING - When user manually toggles theme
-   [data-color-scheme="dark"] targets elements with this attribute
-*/
+/* Data attribute for manual theme switching */
 [data-color-scheme="dark"] {
-  /* Same dark mode colors as above, but triggered by data attribute instead of system preference */
   --color-background: rgba(31, 33, 33, 1);
   --color-surface: rgba(38, 40, 40, 1);
   --color-text: rgba(245, 245, 245, 1);
@@ -185,6 +170,14 @@
   --color-border-secondary: rgba(119, 124, 124, 0.2);
   --color-select-caret: rgba(245, 245, 245, 0.8);
 
+  /* Common style patterns - updated for dark mode */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
   /* RGB versions for dark mode */
   --color-success-rgb: 50, 184, 198;
   --color-error-rgb: 255, 84, 89;
@@ -192,7 +185,6 @@
   --color-info-rgb: 167, 169, 169;
 }
 
-/* Light mode colors when manually set */
 [data-color-scheme="light"] {
   --color-background: rgba(252, 252, 249, 1);
   --color-surface: rgba(255, 255, 253, 1);
@@ -221,224 +213,218 @@
   --color-info-rgb: 98, 108, 113;
 }
 
-/* 
-   BASE STYLES - Fundamental styling for HTML elements
-   These styles apply to the entire document
-*/
+/* Base styles */
 html {
-  font-size: var(--font-size-base); /* Set base font size */
-  font-family: var(--font-family-base); /* Set main font family */
-  line-height: var(--line-height-normal); /* Set line spacing */
-  color: var(--color-text); /* Set text color */
-  background-color: var(--color-background); /* Set background color */
-  -webkit-font-smoothing: antialiased; /* Make fonts look smoother on Mac */
-  box-sizing: border-box; /* Include padding and border in element width/height */
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  margin: 0;
+  padding: 0;
 }
 
-/* 
-   UNIVERSAL BOX SIZING - Make all elements use border-box sizing
-   This makes it easier to calculate element sizes
-*/
 *,
 *::before,
 *::after {
-  box-sizing: inherit; /* Inherit box-sizing from html element */
+  box-sizing: inherit;
 }
 
-/* 
-   TYPOGRAPHY STYLES - Styling for headings and text elements
-*/
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; /* Remove default margins */
-  font-weight: var(--font-weight-semibold); /* Make headings semi-bold */
-  line-height: var(--line-height-tight); /* Tighter line spacing for headings */
-  color: var(--color-text); /* Use main text color */
-  letter-spacing: var(--letter-spacing-tight); /* Slightly tighter letter spacing */
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-/* Different sizes for different heading levels */
-h1 { font-size: var(--font-size-4xl); }
-h2 { font-size: var(--font-size-3xl); }
-h3 { font-size: var(--font-size-2xl); }
-h4 { font-size: var(--font-size-xl); }
-h5 { font-size: var(--font-size-lg); }
-h6 { font-size: var(--font-size-md); }
+h1 {
+  font-size: var(--font-size-4xl);
+}
+h2 {
+  font-size: var(--font-size-3xl);
+}
+h3 {
+  font-size: var(--font-size-2xl);
+}
+h4 {
+  font-size: var(--font-size-xl);
+}
+h5 {
+  font-size: var(--font-size-lg);
+}
+h6 {
+  font-size: var(--font-size-md);
+}
 
 p {
-  margin: 0 0 var(--space-16) 0; /* Add bottom margin to paragraphs */
+  margin: 0 0 var(--space-16) 0;
 }
 
-/* Link styling */
 a {
-  color: var(--color-primary); /* Use primary color for links */
-  text-decoration: none; /* Remove underline */
-  transition: color var(--duration-fast) var(--ease-standard); /* Smooth color transition */
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
 a:hover {
-  color: var(--color-primary-hover); /* Change color on hover */
+  color: var(--color-primary-hover);
 }
 
-/* Code styling */
-code, pre {
-  font-family: var(--font-family-mono); /* Use monospace font */
-  font-size: calc(var(--font-size-base) * 0.95); /* Slightly smaller than normal text */
-  background-color: var(--color-secondary); /* Light background */
-  border-radius: var(--radius-sm); /* Rounded corners */
+code,
+pre {
+  font-family: var(--font-family-mono);
+  font-size: calc(var(--font-size-base) * 0.95);
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-sm);
 }
 
 code {
-  padding: var(--space-1) var(--space-4); /* Small padding for inline code */
+  padding: var(--space-1) var(--space-4);
 }
 
 pre {
-  padding: var(--space-16); /* Larger padding for code blocks */
-  margin: var(--space-16) 0; /* Margin above and below */
-  overflow: auto; /* Add scrollbar if content is too wide */
-  border: 1px solid var(--color-border); /* Add border */
+  padding: var(--space-16);
+  margin: var(--space-16) 0;
+  overflow: auto;
+  border: 1px solid var(--color-border);
 }
 
 pre code {
-  background: none; /* Remove background from code inside pre */
-  padding: 0; /* Remove padding from code inside pre */
+  background: none;
+  padding: 0;
 }
 
-/* 
-   BUTTON STYLES - Styling for all buttons in the application
-*/
+/* Buttons */
 .btn {
-  display: inline-flex; /* Use flexbox for button layout */
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  padding: var(--space-8) var(--space-16); /* Add padding inside button */
-  border-radius: var(--radius-base); /* Rounded corners */
-  font-size: var(--font-size-base); /* Normal font size */
-  font-weight: 500; /* Medium font weight */
-  line-height: 1.5; /* Line height */
-  cursor: pointer; /* Show pointer cursor on hover */
-  transition: all var(--duration-normal) var(--ease-standard); /* Smooth transitions */
-  border: none; /* Remove default border */
-  text-decoration: none; /* Remove underline if button is a link */
-  position: relative; /* For positioning pseudo-elements */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  border: none;
+  text-decoration: none;
+  position: relative;
 }
 
-/* Focus state for accessibility */
 .btn:focus-visible {
-  outline: none; /* Remove default outline */
-  box-shadow: var(--focus-ring); /* Add custom focus ring */
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
-/* PRIMARY BUTTON - Main action buttons */
 .btn--primary {
-  background: var(--color-primary); /* Primary background color */
-  color: var(--color-btn-primary-text); /* Text color on primary buttons */
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-hover); /* Darker on hover */
+  background: var(--color-primary-hover);
 }
 
 .btn--primary:active {
-  background: var(--color-primary-active); /* Even darker when clicked */
+  background: var(--color-primary-active);
 }
 
-/* SECONDARY BUTTON - Less important actions */
 .btn--secondary {
-  background: var(--color-secondary); /* Secondary background */
-  color: var(--color-text); /* Normal text color */
+  background: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .btn--secondary:hover {
-  background: var(--color-secondary-hover); /* Darker on hover */
+  background: var(--color-secondary-hover);
 }
 
 .btn--secondary:active {
-  background: var(--color-secondary-active); /* Darker when clicked */
+  background: var(--color-secondary-active);
 }
 
-/* OUTLINE BUTTON - Buttons with just a border */
 .btn--outline {
-  background: transparent; /* No background */
-  border: 1px solid var(--color-border); /* Add border */
-  color: var(--color-text); /* Normal text color */
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .btn--outline:hover {
-  background: var(--color-secondary); /* Add background on hover */
+  background: var(--color-secondary);
 }
 
-/* BUTTON SIZES */
 .btn--sm {
-  padding: var(--space-4) var(--space-12); /* Smaller padding */
-  font-size: var(--font-size-sm); /* Smaller font */
-  border-radius: var(--radius-sm); /* Smaller border radius */
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
 }
 
 .btn--lg {
-  padding: var(--space-10) var(--space-20); /* Larger padding */
-  font-size: var(--font-size-lg); /* Larger font */
-  border-radius: var(--radius-md); /* Larger border radius */
+  padding: var(--space-10) var(--space-20);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-md);
 }
 
 .btn--full-width {
-  width: 100%; /* Take full width of container */
+  width: 100%;
 }
 
-/* Disabled button state */
 .btn:disabled {
-  opacity: 0.5; /* Make button look faded */
-  cursor: not-allowed; /* Show "not allowed" cursor */
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* 
-   FORM ELEMENTS - Styling for inputs, selects, textareas, etc.
-*/
+/* Form elements */
 .form-control {
-  display: block; /* Take full width */
-  width: 100%; /* Full width */
-  padding: var(--space-8) var(--space-12); /* Padding inside input */
-  font-size: var(--font-size-md); /* Font size */
-  line-height: 1.5; /* Line height */
-  color: var(--color-text); /* Text color */
-  background-color: var(--color-surface); /* Background color */
-  border: 1px solid var(--color-border); /* Border */
-  border-radius: var(--radius-base); /* Rounded corners */
+  display: block;
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
   transition: border-color var(--duration-fast) var(--ease-standard),
-    box-shadow var(--duration-fast) var(--ease-standard); /* Smooth transitions */
+    box-shadow var(--duration-fast) var(--ease-standard);
 }
 
-/* Textarea specific styling */
 textarea.form-control {
-  font-family: var(--font-family-base); /* Use same font as rest of app */
-  font-size: var(--font-size-base); /* Normal font size */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
 }
 
-/* Select dropdown styling */
 select.form-control {
-  padding: var(--space-8) var(--space-12); /* Padding */
-  -webkit-appearance: none; /* Remove default styling on Safari */
-  -moz-appearance: none; /* Remove default styling on Firefox */
-  appearance: none; /* Remove default styling */
-  background-image: var(--select-caret-light); /* Add custom dropdown arrow */
-  background-repeat: no-repeat; /* Don't repeat the arrow */
-  background-position: right var(--space-12) center; /* Position arrow on right */
-  background-size: 16px; /* Size of arrow */
-  padding-right: var(--space-32); /* Make room for arrow */
+  padding: var(--space-8) var(--space-12);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: var(--select-caret-light);
+  background-repeat: no-repeat;
+  background-position: right var(--space-12) center;
+  background-size: 16px;
+  padding-right: var(--space-32);
 }
 
-/* Dark mode dropdown arrow */
+/* Add a dark mode specific caret */
 @media (prefers-color-scheme: dark) {
   select.form-control {
-    background-image: var(--select-caret-dark); /* Use light arrow on dark background */
+    background-image: var(--select-caret-dark);
   }
 }
 
-/* Manual dark mode dropdown arrow */
+/* Also handle data-color-scheme */
 [data-color-scheme="dark"] select.form-control {
   background-image: var(--select-caret-dark);
 }
@@ -447,72 +433,64 @@ select.form-control {
   background-image: var(--select-caret-light);
 }
 
-/* Focus state for form controls */
 .form-control:focus {
-  border-color: var(--color-primary); /* Change border color */
-  outline: var(--focus-outline); /* Add focus outline */
+  border-color: var(--color-primary);
+  outline: var(--focus-outline);
 }
 
-/* Form labels */
 .form-label {
-  display: block; /* Take full width */
-  margin-bottom: var(--space-8); /* Space below label */
-  font-weight: var(--font-weight-medium); /* Medium font weight */
-  font-size: var(--font-size-sm); /* Smaller font size */
+  display: block;
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
 }
 
-/* Form groups - containers for label + input */
 .form-group {
-  margin-bottom: var(--space-16); /* Space between form groups */
+  margin-bottom: var(--space-16);
 }
 
-/* 
-   CARD COMPONENT - Reusable card styling
-*/
+/* Card component */
 .card {
-  background-color: var(--color-surface); /* Card background */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  border: 1px solid var(--color-card-border); /* Border */
-  box-shadow: var(--shadow-sm); /* Small shadow */
-  overflow: hidden; /* Hide content that overflows */
-  transition: box-shadow var(--duration-normal) var(--ease-standard); /* Smooth shadow transition */
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md); /* Larger shadow on hover */
+  box-shadow: var(--shadow-md);
 }
 
 .card__body {
-  padding: var(--space-16); /* Padding inside card */
+  padding: var(--space-16);
 }
 
 .card__header,
 .card__footer {
-  padding: var(--space-16); /* Padding for header and footer */
-  border-bottom: 1px solid var(--color-card-border-inner); /* Border below header */
+  padding: var(--space-16);
+  border-bottom: 1px solid var(--color-card-border-inner);
 }
 
-/* 
-   STATUS INDICATORS - Colored badges for different states
-*/
+/* Status indicators - simplified with CSS variables */
 .status {
-  display: inline-flex; /* Inline flexbox */
-  align-items: center; /* Center vertically */
-  padding: var(--space-6) var(--space-12); /* Padding */
-  border-radius: var(--radius-full); /* Fully rounded (pill shape) */
-  font-weight: var(--font-weight-medium); /* Medium font weight */
-  font-size: var(--font-size-sm); /* Small font size */
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
 }
 
-/* Different status types with different colors */
 .status--success {
   background-color: rgba(
     var(--color-success-rgb, 33, 128, 141),
     var(--status-bg-opacity)
-  ); /* Success background with transparency */
-  color: var(--color-success); /* Success text color */
+  );
+  color: var(--color-success);
   border: 1px solid
-    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity)); /* Success border */
+    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
 }
 
 .status--error {
@@ -545,997 +523,1019 @@ select.form-control {
     rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
 }
 
-/* 
-   CONTAINER LAYOUT - Responsive containers
-*/
+/* Container layout */
 .container {
-  width: 100%; /* Full width */
-  margin-right: auto; /* Center horizontally */
-  margin-left: auto; /* Center horizontally */
-  padding-right: var(--space-16); /* Right padding */
-  padding-left: var(--space-16); /* Left padding */
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--space-16);
+  padding-left: var(--space-16);
 }
 
-/* Responsive container sizes */
 @media (min-width: 640px) {
-  .container { max-width: var(--container-sm); }
+  .container {
+    max-width: var(--container-sm);
+  }
 }
 @media (min-width: 768px) {
-  .container { max-width: var(--container-md); }
+  .container {
+    max-width: var(--container-md);
+  }
 }
 @media (min-width: 1024px) {
-  .container { max-width: var(--container-lg); }
+  .container {
+    max-width: var(--container-lg);
+  }
 }
 @media (min-width: 1280px) {
-  .container { max-width: var(--container-xl); }
+  .container {
+    max-width: var(--container-xl);
+  }
 }
 
-/* 
-   UTILITY CLASSES - Quick styling classes
-*/
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-4 { gap: var(--space-4); }
-.gap-8 { gap: var(--space-8); }
-.gap-16 { gap: var(--space-16); }
+/* Utility classes */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+.gap-16 {
+  gap: var(--space-16);
+}
 
-/* Margin utilities */
-.m-0 { margin: 0; }
-.mt-8 { margin-top: var(--space-8); }
-.mb-8 { margin-bottom: var(--space-8); }
-.mx-8 { margin-left: var(--space-8); margin-right: var(--space-8); }
-.my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
+.m-0 {
+  margin: 0;
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+.mx-8 {
+  margin-left: var(--space-8);
+  margin-right: var(--space-8);
+}
+.my-8 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
 
-/* Padding utilities */
-.p-0 { padding: 0; }
-.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
-.px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
-.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
-.px-16 { padding-left: var(--space-16); padding-right: var(--space-16); }
+.p-0 {
+  padding: 0;
+}
+.py-8 {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+.px-8 {
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+.py-16 {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+.px-16 {
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+}
 
-/* Display utilities */
-.block { display: block; }
-.hidden { display: none; }
+.block {
+  display: block;
+}
+.hidden {
+  display: none;
+}
 
-/* 
-   ACCESSIBILITY - Styles for screen readers and keyboard navigation
-*/
+/* Accessibility */
 .sr-only {
-  position: absolute; /* Position absolutely */
-  width: 1px; /* Make very small */
+  position: absolute;
+  width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
-  overflow: hidden; /* Hide overflow */
-  clip: rect(0, 0, 0, 0); /* Clip to nothing */
-  white-space: nowrap; /* Don't wrap text */
-  border-width: 0; /* No border */
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-/* Focus styles for keyboard navigation */
 :focus-visible {
-  outline: var(--focus-outline); /* Custom focus outline */
-  outline-offset: 2px; /* Space between element and outline */
+  outline: var(--focus-outline);
+  outline-offset: 2px;
 }
 
-/* Dark mode specific button styling */
+/* Dark mode specifics */
 [data-color-scheme="dark"] .btn--outline {
   border: 1px solid var(--color-border-secondary);
 }
 
-/* Custom font loading */
 @font-face {
   font-family: 'FKGroteskNeue';
   src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
     format('woff2');
 }
 
-/* 
-   APPLICATION-SPECIFIC STYLES - Styles specific to this project management app
-*/
-
-/* HEADER STYLES */
+/* Application-specific styles */
 .header {
-  background-color: var(--color-surface); /* Header background */
-  border-bottom: 1px solid var(--color-border); /* Bottom border */
-  padding: var(--space-16) 0; /* Vertical padding */
-  position: sticky; /* Stick to top when scrolling */
-  top: 0; /* Stick to very top */
-  z-index: 100; /* Appear above other content */
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-16) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__content {
-  max-width: var(--container-xl); /* Maximum width */
-  margin: 0 auto; /* Center horizontally */
-  padding: 0 var(--space-16); /* Horizontal padding */
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between title and actions */
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__title {
-  font-size: var(--font-size-2xl); /* Large font size */
-  font-weight: var(--font-weight-bold); /* Bold font */
-  color: var(--color-primary); /* Primary color */
-  margin: 0; /* No margin */
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin: 0;
 }
 
 .header__actions {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  gap: var(--space-16); /* Space between items */
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
 }
 
-/* Search container */
 .search-container {
-  position: relative; /* For positioning search icon if needed */
+  position: relative;
 }
 
 .search-input {
-  width: 300px; /* Fixed width */
-  padding-right: var(--space-32); /* Extra right padding for icon */
+  width: 300px;
+  padding-right: var(--space-32);
 }
 
-/* Theme toggle button */
 .theme-toggle {
-  padding: var(--space-8); /* Square padding */
-  min-width: auto; /* Don't enforce minimum width */
+  padding: var(--space-8);
+  min-width: auto;
 }
 
 .theme-icon {
-  font-size: var(--font-size-lg); /* Larger icon */
+  font-size: var(--font-size-lg);
 }
 
-/* User profile section */
 .user-profile {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  gap: var(--space-8); /* Space between items */
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
 }
 
 .user-name {
-  font-size: var(--font-size-sm); /* Small font */
-  color: var(--color-text-secondary); /* Secondary text color */
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
 
-/* MAIN LAYOUT */
 .app-layout {
-  display: flex; /* Side-by-side layout */
-  min-height: calc(100vh - 80px); /* Full height minus header */
+  display: flex;
+  min-height: calc(100vh - 80px);
 }
 
-/* SIDEBAR STYLES */
 .sidebar {
-  width: 250px; /* Fixed width */
-  background-color: var(--color-surface); /* Background color */
-  border-right: 1px solid var(--color-border); /* Right border */
-  padding: var(--space-24) 0; /* Vertical padding */
-  flex-shrink: 0; /* Don't shrink when space is limited */
+  width: 250px;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-24) 0;
+  flex-shrink: 0;
 }
 
 .nav-menu {
-  list-style: none; /* Remove bullet points */
-  margin: 0; /* No margin */
-  padding: 0; /* No padding */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
-  margin-bottom: var(--space-4); /* Space between items */
+  margin-bottom: var(--space-4);
 }
 
 .nav-link {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  gap: var(--space-12); /* Space between icon and text */
-  width: 100%; /* Full width */
-  padding: var(--space-12) var(--space-24); /* Padding */
-  background: none; /* No background */
-  border: none; /* No border */
-  color: var(--color-text); /* Text color */
-  font-size: var(--font-size-base); /* Normal font size */
-  text-align: left; /* Left align text */
-  cursor: pointer; /* Pointer cursor */
-  transition: all var(--duration-fast) var(--ease-standard); /* Smooth transitions */
-  border-radius: 0; /* No rounded corners */
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  padding: var(--space-12) var(--space-24);
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  border-radius: 0;
 }
 
 .nav-link:hover {
-  background-color: var(--color-secondary); /* Background on hover */
+  background-color: var(--color-secondary);
 }
 
 .nav-link.active {
-  background-color: var(--color-primary); /* Primary background when active */
-  color: var(--color-btn-primary-text); /* Light text on primary background */
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
 }
 
 .nav-icon {
-  font-size: var(--font-size-lg); /* Larger icon */
+  font-size: var(--font-size-lg);
 }
 
-/* MAIN CONTENT AREA */
 .main-content {
-  flex: 1; /* Take remaining space */
-  padding: var(--space-24) var(--space-32); /* Padding */
-  overflow-y: auto; /* Scroll if content is too tall */
+  flex: 1;
+  padding: var(--space-24) var(--space-32);
+  overflow-y: auto;
 }
 
-/* VIEW MANAGEMENT */
 .view {
-  display: none; /* Hide all views by default */
+  display: none;
 }
 
 .view.active {
-  display: block; /* Show active view */
+  display: block;
 }
 
 .view-header {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between title and controls */
-  margin-bottom: var(--space-32); /* Space below header */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-32);
 }
 
 .view-header h2 {
-  margin: 0; /* No margin */
-  font-size: var(--font-size-3xl); /* Large font */
+  margin: 0;
+  font-size: var(--font-size-3xl);
 }
 
 .view-controls {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  gap: var(--space-16); /* Space between controls */
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
 }
 
 .task-filters {
-  display: flex; /* Use flexbox */
-  gap: var(--space-8); /* Space between filters */
+  display: flex;
+  gap: var(--space-8);
 }
 
 .task-filters .form-control {
-  width: 150px; /* Fixed width for filter dropdowns */
+  width: 150px;
 }
 
 .view-toggles {
-  display: flex; /* Use flexbox */
-  gap: var(--space-4); /* Small gap between toggles */
+  display: flex;
+  gap: var(--space-4);
 }
 
 .view-toggle.active {
-  background-color: var(--color-primary); /* Primary background when active */
-  color: var(--color-btn-primary-text); /* Light text */
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
 }
 
-/* DASHBOARD STYLES */
+/* Dashboard Styles */
 .stats-grid {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: var(--space-24); /* Space between grid items */
-  margin-bottom: var(--space-32); /* Space below grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
 }
 
 .stat-card {
-  background-color: var(--color-surface); /* Card background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  padding: var(--space-24); /* Padding */
-  text-align: center; /* Center text */
-  transition: transform var(--duration-fast) var(--ease-standard); /* Smooth transform */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  text-align: center;
+  transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .stat-card:hover {
-  transform: translateY(-2px); /* Lift up on hover */
-  box-shadow: var(--shadow-md); /* Add shadow on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .stat-number {
-  font-size: var(--font-size-4xl); /* Very large font */
-  font-weight: var(--font-weight-bold); /* Bold font */
-  color: var(--color-primary); /* Primary color */
-  margin-bottom: var(--space-8); /* Space below number */
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
 }
 
 .stat-label {
-  font-size: var(--font-size-sm); /* Small font */
-  color: var(--color-text-secondary); /* Secondary color */
-  text-transform: uppercase; /* Make uppercase */
-  letter-spacing: 0.05em; /* Spread out letters */
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .dashboard-sections {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: 2fr 1fr; /* Two columns, first is twice as wide */
-  gap: var(--space-32); /* Space between sections */
-  margin-bottom: var(--space-32); /* Space below sections */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-32);
+  margin-bottom: var(--space-32);
 }
 
 .dashboard-section h3 {
-  margin-bottom: var(--space-16); /* Space below heading */
-  color: var(--color-text); /* Text color */
+  margin-bottom: var(--space-16);
+  color: var(--color-text);
 }
 
 .activity-feed {
-  background-color: var(--color-surface); /* Background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  padding: var(--space-16); /* Padding */
-  max-height: 400px; /* Maximum height */
-  overflow-y: auto; /* Scroll if content is too tall */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .activity-item {
-  padding: var(--space-12) 0; /* Vertical padding */
-  border-bottom: 1px solid var(--color-card-border-inner); /* Bottom border */
+  padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-card-border-inner);
 }
 
 .activity-item:last-child {
-  border-bottom: none; /* No border on last item */
+  border-bottom: none;
 }
 
 .activity-text {
-  font-size: var(--font-size-sm); /* Small font */
-  color: var(--color-text); /* Text color */
-  margin-bottom: var(--space-4); /* Space below text */
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
 }
 
 .activity-time {
-  font-size: var(--font-size-xs); /* Extra small font */
-  color: var(--color-text-secondary); /* Secondary color */
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
 }
 
 .quick-actions {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
-  gap: var(--space-12); /* Space between buttons */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
 }
 
-/* CALENDAR STYLES */
+/* Calendar Styles */
 .calendar-section {
-  grid-column: 1 / -1; /* Span all columns */
-  margin-top: var(--space-32); /* Space above calendar */
+  grid-column: 1 / -1;
+  margin-top: var(--space-32);
 }
 
 .calendar-header-controls {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between title and controls */
-  align-items: center; /* Center vertically */
-  margin-bottom: var(--space-16); /* Space below header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
 }
 
 .calendar-navigation {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  gap: var(--space-16); /* Space between controls */
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
 }
 
 .calendar-month-year {
-  font-size: var(--font-size-lg); /* Large font */
-  font-weight: var(--font-weight-semibold); /* Semi-bold */
-  color: var(--color-text); /* Text color */
-  min-width: 150px; /* Minimum width */
-  text-align: center; /* Center text */
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  min-width: 150px;
+  text-align: center;
 }
 
 .calendar-container {
-  background-color: var(--color-surface); /* Background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  padding: var(--space-16); /* Padding */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
 }
 
 .calendar-grid {
-  display: grid; /* Use CSS Grid */
-  grid-template-rows: auto 1fr; /* Header row, then content */
-  gap: var(--space-8); /* Space between rows */
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-8);
 }
 
 .calendar-header {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(7, 1fr); /* 7 equal columns for days of week */
-  gap: var(--space-4); /* Space between columns */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-4);
 }
 
 .calendar-day-header {
-  padding: var(--space-8); /* Padding */
-  text-align: center; /* Center text */
-  font-size: var(--font-size-sm); /* Small font */
-  font-weight: var(--font-weight-semibold); /* Semi-bold */
-  color: var(--color-text-secondary); /* Secondary color */
-  text-transform: uppercase; /* Make uppercase */
-  letter-spacing: 0.05em; /* Spread out letters */
+  padding: var(--space-8);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .calendar-body {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(7, 1fr); /* 7 equal columns */
-  gap: var(--space-4); /* Space between cells */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-4);
 }
 
 .calendar-day {
-  min-height: 100px; /* Minimum height */
-  padding: var(--space-8); /* Padding */
-  border: 1px solid var(--color-card-border-inner); /* Border */
-  border-radius: var(--radius-sm); /* Small rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  transition: all var(--duration-fast) var(--ease-standard); /* Smooth transitions */
-  position: relative; /* For positioning child elements */
-  background-color: var(--color-background); /* Background color */
+  min-height: 100px;
+  padding: var(--space-8);
+  border: 1px solid var(--color-card-border-inner);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  position: relative;
+  background-color: var(--color-background);
 }
 
 .calendar-day:hover {
-  background-color: var(--color-secondary); /* Background on hover */
-  border-color: var(--color-primary); /* Primary border on hover */
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
 }
 
 .calendar-day.empty {
-  background-color: transparent; /* No background for empty days */
-  border-color: transparent; /* No border for empty days */
-  cursor: default; /* Default cursor for empty days */
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
 }
 
 .calendar-day.today {
-  background-color: rgba(var(--color-primary-rgb, 33, 128, 141), 0.1); /* Light primary background */
-  border-color: var(--color-primary); /* Primary border */
+  background-color: rgba(var(--color-primary-rgb, 33, 128, 141), 0.1);
+  border-color: var(--color-primary);
 }
 
 .calendar-day.has-tasks {
-  background-color: rgba(var(--color-success-rgb, 33, 128, 141), 0.05); /* Very light success background */
+  background-color: rgba(var(--color-success-rgb, 33, 128, 141), 0.05);
 }
 
 .calendar-day-number {
-  font-size: var(--font-size-sm); /* Small font */
-  font-weight: var(--font-weight-medium); /* Medium weight */
-  color: var(--color-text); /* Text color */
-  margin-bottom: var(--space-4); /* Space below number */
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
 }
 
 .calendar-task-count {
-  position: absolute; /* Position absolutely */
-  top: var(--space-4); /* Distance from top */
-  right: var(--space-4); /* Distance from right */
-  background-color: var(--color-primary); /* Primary background */
-  color: var(--color-btn-primary-text); /* Light text */
-  border-radius: var(--radius-full); /* Circular */
-  width: 20px; /* Fixed width */
-  height: 20px; /* Fixed height */
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  font-size: var(--font-size-xs); /* Extra small font */
-  font-weight: var(--font-weight-bold); /* Bold font */
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border-radius: var(--radius-full);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
 }
 
 .calendar-tasks {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
-  gap: var(--space-2); /* Small gap between tasks */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
 .calendar-task {
-  padding: var(--space-2) var(--space-4); /* Small padding */
-  border-radius: var(--radius-sm); /* Small rounded corners */
-  font-size: var(--font-size-xs); /* Extra small font */
-  line-height: 1.2; /* Tight line height */
-  color: var(--color-text); /* Text color */
-  background-color: var(--color-secondary); /* Secondary background */
-  border-left: 3px solid var(--color-info); /* Left border for priority */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Show ... for long text */
-  white-space: nowrap; /* Don't wrap text */
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+  border-left: 3px solid var(--color-info);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* Different priority colors for calendar tasks */
 .calendar-task.priority-high {
-  border-left-color: var(--color-error); /* Red for high priority */
-  background-color: rgba(var(--color-error-rgb), 0.1); /* Light red background */
+  border-left-color: var(--color-error);
+  background-color: rgba(var(--color-error-rgb), 0.1);
 }
 
 .calendar-task.priority-medium {
-  border-left-color: var(--color-warning); /* Orange for medium priority */
-  background-color: rgba(var(--color-warning-rgb), 0.1); /* Light orange background */
+  border-left-color: var(--color-warning);
+  background-color: rgba(var(--color-warning-rgb), 0.1);
 }
 
 .calendar-task.priority-low {
-  border-left-color: var(--color-info); /* Blue for low priority */
-  background-color: rgba(var(--color-info-rgb), 0.1); /* Light blue background */
+  border-left-color: var(--color-info);
+  background-color: rgba(var(--color-info-rgb), 0.1);
 }
 
 .calendar-task-more {
-  padding: var(--space-2) var(--space-4); /* Small padding */
-  font-size: var(--font-size-xs); /* Extra small font */
-  color: var(--color-text-secondary); /* Secondary color */
-  text-align: center; /* Center text */
-  font-style: italic; /* Italic text */
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+  font-style: italic;
 }
 
-/* PROJECTS STYLES */
+/* Projects Styles */
 .projects-grid {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Responsive columns */
-  gap: var(--space-24); /* Space between cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-24);
 }
 
 .project-card {
-  background-color: var(--color-surface); /* Card background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  padding: var(--space-20); /* Padding */
-  transition: all var(--duration-fast) var(--ease-standard); /* Smooth transitions */
-  cursor: pointer; /* Pointer cursor */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  transition: all var(--duration-fast) var(--ease-standard);
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-2px); /* Lift up on hover */
-  box-shadow: var(--shadow-md); /* Add shadow on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .project-header {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between name and status */
-  align-items: flex-start; /* Align to top */
-  margin-bottom: var(--space-16); /* Space below header */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-16);
 }
 
 .project-name {
-  font-size: var(--font-size-lg); /* Large font */
-  font-weight: var(--font-weight-semibold); /* Semi-bold */
-  margin: 0; /* No margin */
-  color: var(--color-text); /* Text color */
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--color-text);
 }
 
 .project-status {
-  padding: var(--space-4) var(--space-8); /* Small padding */
-  border-radius: var(--radius-full); /* Fully rounded */
-  font-size: var(--font-size-xs); /* Extra small font */
-  font-weight: var(--font-weight-medium); /* Medium weight */
-  text-transform: uppercase; /* Make uppercase */
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
 }
 
-/* Different project status colors */
 .project-status.active {
-  background-color: rgba(var(--color-success-rgb), 0.15); /* Light success background */
-  color: var(--color-success); /* Success text color */
+  background-color: rgba(var(--color-success-rgb), 0.15);
+  color: var(--color-success);
 }
 
 .project-status.completed {
-  background-color: rgba(var(--color-info-rgb), 0.15); /* Light info background */
-  color: var(--color-info); /* Info text color */
+  background-color: rgba(var(--color-info-rgb), 0.15);
+  color: var(--color-info);
 }
 
 .project-status.on-hold {
-  background-color: rgba(var(--color-warning-rgb), 0.15); /* Light warning background */
-  color: var(--color-warning); /* Warning text color */
+  background-color: rgba(var(--color-warning-rgb), 0.15);
+  color: var(--color-warning);
 }
 
 .project-description {
-  color: var(--color-text-secondary); /* Secondary text color */
-  font-size: var(--font-size-sm); /* Small font */
-  margin-bottom: var(--space-16); /* Space below description */
-  line-height: 1.4; /* Comfortable line height */
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-16);
+  line-height: 1.4;
 }
 
 .project-meta {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center vertically */
-  font-size: var(--font-size-sm); /* Small font */
-  color: var(--color-text-secondary); /* Secondary color */
-  margin-bottom: var(--space-16); /* Space below meta */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-16);
 }
 
 .project-progress {
-  margin-bottom: var(--space-12); /* Space below progress */
+  margin-bottom: var(--space-12);
 }
 
 .progress-label {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between label and percentage */
-  font-size: var(--font-size-sm); /* Small font */
-  margin-bottom: var(--space-4); /* Space below label */
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-4);
 }
 
 .progress-bar {
-  width: 100%; /* Full width */
-  height: 6px; /* Fixed height */
-  background-color: var(--color-secondary); /* Secondary background */
-  border-radius: var(--radius-full); /* Fully rounded */
-  overflow: hidden; /* Hide overflow */
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
 }
 
 .progress-fill {
-  height: 100%; /* Full height */
-  background-color: var(--color-primary); /* Primary color */
-  transition: width var(--duration-normal) var(--ease-standard); /* Smooth width transition */
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width var(--duration-normal) var(--ease-standard);
 }
 
 .project-actions {
-  display: flex; /* Use flexbox */
-  gap: var(--space-8); /* Space between buttons */
+  display: flex;
+  gap: var(--space-8);
 }
 
 .btn-icon {
-  padding: var(--space-6); /* Square padding */
-  min-width: auto; /* No minimum width */
-  border-radius: var(--radius-sm); /* Small rounded corners */
+  padding: var(--space-6);
+  min-width: auto;
+  border-radius: var(--radius-sm);
 }
 
-/* TASKS STYLES */
+/* Tasks Styles */
 .tasks-container {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
-  gap: var(--space-16); /* Space between tasks */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
 }
 
 .task-item {
-  background-color: var(--color-surface); /* Background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-base); /* Rounded corners */
-  padding: var(--space-16); /* Padding */
-  transition: all var(--duration-fast) var(--ease-standard); /* Smooth transitions */
-  cursor: pointer; /* Pointer cursor */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-base);
+  padding: var(--space-16);
+  transition: all var(--duration-fast) var(--ease-standard);
+  cursor: pointer;
 }
 
 .task-item:hover {
-  box-shadow: var(--shadow-sm); /* Add shadow on hover */
-  border-color: var(--color-primary); /* Primary border on hover */
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-primary);
 }
 
 .task-item.completed {
-  opacity: 0.7; /* Make completed tasks look faded */
+  opacity: 0.7;
 }
 
 .task-item.completed .task-title {
-  text-decoration: line-through; /* Strike through completed task titles */
+  text-decoration: line-through;
 }
 
 .task-header {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between title and priority */
-  align-items: flex-start; /* Align to top */
-  margin-bottom: var(--space-12); /* Space below header */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-12);
 }
 
 .task-title {
-  font-size: var(--font-size-lg); /* Large font */
-  font-weight: var(--font-weight-medium); /* Medium weight */
-  margin: 0; /* No margin */
-  color: var(--color-text); /* Text color */
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  color: var(--color-text);
 }
 
 .task-priority {
-  padding: var(--space-4) var(--space-8); /* Small padding */
-  border-radius: var(--radius-full); /* Fully rounded */
-  font-size: var(--font-size-xs); /* Extra small font */
-  font-weight: var(--font-weight-medium); /* Medium weight */
-  text-transform: uppercase; /* Make uppercase */
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
 }
 
-/* Different task priority colors */
 .task-priority.high {
-  background-color: rgba(var(--color-error-rgb), 0.15); /* Light error background */
-  color: var(--color-error); /* Error text color */
+  background-color: rgba(var(--color-error-rgb), 0.15);
+  color: var(--color-error);
 }
 
 .task-priority.medium {
-  background-color: rgba(var(--color-warning-rgb), 0.15); /* Light warning background */
-  color: var(--color-warning); /* Warning text color */
+  background-color: rgba(var(--color-warning-rgb), 0.15);
+  color: var(--color-warning);
 }
 
 .task-priority.low {
-  background-color: rgba(var(--color-info-rgb), 0.15); /* Light info background */
-  color: var(--color-info); /* Info text color */
+  background-color: rgba(var(--color-info-rgb), 0.15);
+  color: var(--color-info);
 }
 
 .task-description {
-  color: var(--color-text-secondary); /* Secondary text color */
-  font-size: var(--font-size-sm); /* Small font */
-  margin-bottom: var(--space-12); /* Space below description */
-  line-height: 1.4; /* Comfortable line height */
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-12);
+  line-height: 1.4;
 }
 
 .task-meta {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center vertically */
-  font-size: var(--font-size-sm); /* Small font */
-  color: var(--color-text-secondary); /* Secondary color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
 
 .task-project {
-  font-weight: var(--font-weight-medium); /* Medium weight */
+  font-weight: var(--font-weight-medium);
 }
 
 .task-due-date.overdue {
-  color: var(--color-error); /* Error color for overdue tasks */
-  font-weight: var(--font-weight-medium); /* Medium weight */
+  color: var(--color-error);
+  font-weight: var(--font-weight-medium);
 }
 
 .task-actions {
-  display: flex; /* Use flexbox */
-  gap: var(--space-8); /* Space between buttons */
-  margin-top: var(--space-12); /* Space above actions */
+  display: flex;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
 }
 
-/* KANBAN STYLES */
+/* Kanban Styles */
 .kanban-board {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: var(--space-24); /* Space between columns */
-  height: calc(100vh - 200px); /* Fixed height */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  height: calc(100vh - 200px);
 }
 
 .kanban-column {
-  background-color: var(--color-secondary); /* Secondary background */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  padding: var(--space-16); /* Padding */
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
 }
 
 .kanban-column-title {
-  font-size: var(--font-size-lg); /* Large font */
-  font-weight: var(--font-weight-semibold); /* Semi-bold */
-  text-align: center; /* Center text */
-  margin: 0 0 var(--space-16) 0; /* Space below title */
-  color: var(--color-text); /* Text color */
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  margin: 0 0 var(--space-16) 0;
+  color: var(--color-text);
 }
 
 .kanban-column-content {
-  flex: 1; /* Take remaining space */
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
-  gap: var(--space-12); /* Space between tasks */
-  overflow-y: auto; /* Scroll if too many tasks */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  overflow-y: auto;
 }
 
 .kanban-task {
-  background-color: var(--color-surface); /* Surface background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-base); /* Rounded corners */
-  padding: var(--space-12); /* Padding */
-  cursor: pointer; /* Pointer cursor */
-  transition: all var(--duration-fast) var(--ease-standard); /* Smooth transitions */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-base);
+  padding: var(--space-12);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
 }
 
 .kanban-task:hover {
-  box-shadow: var(--shadow-sm); /* Add shadow on hover */
-  transform: translateY(-1px); /* Lift up slightly on hover */
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .kanban-task-title {
-  font-weight: var(--font-weight-medium); /* Medium weight */
-  margin-bottom: var(--space-8); /* Space below title */
-  color: var(--color-text); /* Text color */
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
 }
 
 .kanban-task-meta {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center vertically */
-  font-size: var(--font-size-xs); /* Extra small font */
-  color: var(--color-text-secondary); /* Secondary color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
 }
 
-/* MODAL STYLES */
+/* Modal Styles */
 .modal-overlay {
-  position: fixed; /* Fixed position */
-  top: 0; /* Cover entire screen */
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  z-index: 1000; /* Appear above everything else */
-  opacity: 0; /* Start invisible */
-  visibility: hidden; /* Start hidden */
-  transition: all var(--duration-normal) var(--ease-standard); /* Smooth transitions */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .modal-overlay.active {
-  opacity: 1; /* Make visible */
-  visibility: visible; /* Make visible */
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal {
-  background-color: var(--color-surface); /* Surface background */
-  border-radius: var(--radius-lg); /* Rounded corners */
-  box-shadow: var(--shadow-lg); /* Large shadow */
-  width: 90%; /* 90% of screen width */
-  max-width: 500px; /* Maximum width */
-  max-height: 90vh; /* Maximum height */
-  overflow-y: auto; /* Scroll if content is too tall */
-  transform: scale(0.9); /* Start slightly smaller */
-  transition: transform var(--duration-normal) var(--ease-standard); /* Smooth scale transition */
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: transform var(--duration-normal) var(--ease-standard);
 }
 
 .modal-overlay.active .modal {
-  transform: scale(1); /* Scale to normal size when active */
+  transform: scale(1);
 }
 
 .modal-header {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space between title and close button */
-  align-items: center; /* Center vertically */
-  padding: var(--space-20); /* Padding */
-  border-bottom: 1px solid var(--color-card-border-inner); /* Bottom border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-20);
+  border-bottom: 1px solid var(--color-card-border-inner);
 }
 
 .modal-header h3 {
-  margin: 0; /* No margin */
-  font-size: var(--font-size-xl); /* Extra large font */
+  margin: 0;
+  font-size: var(--font-size-xl);
 }
 
 .modal-close {
-  background: none; /* No background */
-  border: none; /* No border */
-  font-size: var(--font-size-3xl); /* Very large font */
-  cursor: pointer; /* Pointer cursor */
-  color: var(--color-text-secondary); /* Secondary color */
-  padding: 0; /* No padding */
-  width: 32px; /* Fixed width */
-  height: 32px; /* Fixed height */
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  background: none;
+  border: none;
+  font-size: var(--font-size-3xl);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-close:hover {
-  color: var(--color-text); /* Darker on hover */
+  color: var(--color-text);
 }
 
 .modal-body {
-  padding: var(--space-20); /* Padding */
+  padding: var(--space-20);
 }
 
 .modal-footer {
-  display: flex; /* Use flexbox */
-  justify-content: flex-end; /* Align to right */
-  gap: var(--space-12); /* Space between buttons */
-  padding: var(--space-20); /* Padding */
-  border-top: 1px solid var(--color-card-border-inner); /* Top border */
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-12);
+  padding: var(--space-20);
+  border-top: 1px solid var(--color-card-border-inner);
 }
 
-/* TOAST STYLES */
+/* Toast Styles */
 .toast-container {
-  position: fixed; /* Fixed position */
-  top: var(--space-20); /* Distance from top */
-  right: var(--space-20); /* Distance from right */
-  z-index: 1100; /* Appear above modals */
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack vertically */
-  gap: var(--space-12); /* Space between toasts */
+  position: fixed;
+  top: var(--space-20);
+  right: var(--space-20);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
 }
 
 .toast {
-  background-color: var(--color-surface); /* Surface background */
-  border: 1px solid var(--color-card-border); /* Border */
-  border-radius: var(--radius-base); /* Rounded corners */
-  padding: var(--space-16); /* Padding */
-  box-shadow: var(--shadow-md); /* Medium shadow */
-  min-width: 300px; /* Minimum width */
-  transform: translateX(100%); /* Start off-screen to the right */
-  transition: transform var(--duration-normal) var(--ease-standard); /* Smooth slide transition */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-base);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-md);
+  min-width: 300px;
+  transform: translateX(100%);
+  transition: transform var(--duration-normal) var(--ease-standard);
 }
 
 .toast.show {
-  transform: translateX(0); /* Slide in from right */
+  transform: translateX(0);
 }
 
-/* Different toast types with colored left borders */
 .toast.success {
-  border-left: 4px solid var(--color-success); /* Success color left border */
+  border-left: 4px solid var(--color-success);
 }
 
 .toast.error {
-  border-left: 4px solid var(--color-error); /* Error color left border */
+  border-left: 4px solid var(--color-error);
 }
 
 .toast.warning {
-  border-left: 4px solid var(--color-warning); /* Warning color left border */
+  border-left: 4px solid var(--color-warning);
 }
 
 .toast.info {
-  border-left: 4px solid var(--color-info); /* Info color left border */
+  border-left: 4px solid var(--color-info);
 }
 
-/* 
-   RESPONSIVE DESIGN - Styles for different screen sizes
-   @media queries apply styles only when certain conditions are met
-*/
+/* Responsive Design */
 @media (max-width: 768px) {
-  /* Styles for mobile devices (screens smaller than 768px) */
-  
   .app-layout {
-    flex-direction: column; /* Stack sidebar and main content vertically */
+    flex-direction: column;
   }
   
   .sidebar {
-    width: 100%; /* Full width on mobile */
-    order: 2; /* Move sidebar below main content */
-    padding: var(--space-16); /* Smaller padding */
+    width: 100%;
+    order: 2;
+    padding: var(--space-16);
   }
   
   .nav-menu {
-    display: flex; /* Horizontal navigation on mobile */
-    overflow-x: auto; /* Scroll horizontally if needed */
-    gap: var(--space-8); /* Space between nav items */
+    display: flex;
+    overflow-x: auto;
+    gap: var(--space-8);
   }
   
   .nav-item {
-    margin-bottom: 0; /* No bottom margin in horizontal layout */
-    flex-shrink: 0; /* Don't shrink nav items */
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
   
   .main-content {
-    order: 1; /* Move main content above sidebar */
-    padding: var(--space-16); /* Smaller padding */
+    order: 1;
+    padding: var(--space-16);
   }
   
   .header__actions {
-    flex-direction: column; /* Stack header actions vertically */
-    gap: var(--space-8); /* Smaller gap */
+    flex-direction: column;
+    gap: var(--space-8);
   }
   
   .search-input {
-    width: 200px; /* Smaller search input */
+    width: 200px;
   }
   
   .dashboard-sections {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
   }
   
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 4 */
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .projects-grid {
-    grid-template-columns: 1fr; /* Single column for projects */
+    grid-template-columns: 1fr;
   }
   
   .kanban-board {
-    grid-template-columns: 1fr; /* Single column for kanban */
-    gap: var(--space-16); /* Smaller gap */
-    height: auto; /* Auto height instead of fixed */
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+    height: auto;
   }
   
   .view-controls {
-    flex-direction: column; /* Stack controls vertically */
-    align-items: stretch; /* Stretch to full width */
-    gap: var(--space-12); /* Space between controls */
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-12);
   }
   
   .task-filters {
-    flex-wrap: wrap; /* Allow filters to wrap to new line */
+    flex-wrap: wrap;
   }
 
   .calendar-body {
-    grid-template-columns: repeat(7, 1fr); /* Keep 7 columns for calendar */
+    grid-template-columns: repeat(7, 1fr);
   }
   
   .calendar-day {
-    min-height: 80px; /* Smaller height on mobile */
-    padding: var(--space-4); /* Smaller padding */
+    min-height: 80px;
+    padding: var(--space-4);
   }
   
   .calendar-day-number {
-    font-size: var(--font-size-xs); /* Smaller font */
+    font-size: var(--font-size-xs);
   }
   
   .calendar-task {
-    font-size: 10px; /* Even smaller font for tasks */
-    padding: var(--space-1) var(--space-2); /* Smaller padding */
+    font-size: 10px;
+    padding: var(--space-1) var(--space-2);
   }
   
   .calendar-navigation {
-    gap: var(--space-8); /* Smaller gap */
+    gap: var(--space-8);
   }
   
   .calendar-month-year {
-    font-size: var(--font-size-base); /* Smaller font */
-    min-width: 120px; /* Smaller minimum width */
+    font-size: var(--font-size-base);
+    min-width: 120px;
   }
 }

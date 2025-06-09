@@ -1,88 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags provide information about the HTML document -->
-    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 for proper text display -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
-    <title>ProjectFlow - Project Management Tool</title> <!-- Text that appears in browser tab -->
-    <link rel="stylesheet" href="style.css"> <!-- Links to external CSS file for styling -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectFlow - Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header section - appears at the top of every page -->
+    <!-- Header -->
     <header class="header">
         <div class="header__content">
-            <!-- Main title of the application -->
             <h1 class="header__title">ProjectFlow</h1>
-            
-            <!-- Right side of header with search, theme toggle, and user info -->
             <div class="header__actions">
-                <!-- Search functionality -->
                 <div class="search-container">
-                    <!-- Input field for searching projects and tasks -->
                     <input type="text" class="form-control search-input" placeholder="Search projects and tasks..." id="globalSearch">
                 </div>
-                
-                <!-- Button to toggle between light and dark themes -->
                 <button class="btn btn--outline btn--sm theme-toggle" id="themeToggle">
-                    <span class="theme-icon">🌙</span> <!-- Moon icon for dark mode -->
+                    <span class="theme-icon">🌙</span>
                 </button>
-                
-                <!-- User profile section -->
                 <div class="user-profile">
-                    <span class="user-name">Welcome, Dicky</span> <!-- User greeting -->
+                    <span class="user-name">Welcome, Dicky</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main application layout container -->
     <div class="app-layout">
-        <!-- Sidebar Navigation - left side menu -->
+        <!-- Sidebar Navigation -->
         <nav class="sidebar">
-            <!-- Unordered list for navigation menu -->
             <ul class="nav-menu">
-                <!-- Dashboard navigation item -->
                 <li class="nav-item">
-                    <!-- Button with data-view attribute to identify which view to show -->
                     <button class="nav-link active" data-view="dashboard">
-                        <span class="nav-icon">📊</span> <!-- Icon for dashboard -->
+                        <span class="nav-icon">📊</span>
                         Dashboard
                     </button>
                 </li>
-                
-                <!-- Projects navigation item -->
                 <li class="nav-item">
                     <button class="nav-link" data-view="projects">
-                        <span class="nav-icon">📁</span> <!-- Icon for projects -->
+                        <span class="nav-icon">📁</span>
                         Projects
                     </button>
                 </li>
-                
-                <!-- Tasks navigation item -->
                 <li class="nav-item">
                     <button class="nav-link" data-view="tasks">
-                        <span class="nav-icon">✓</span> <!-- Icon for tasks -->
+                        <span class="nav-icon">✓</span>
                         Tasks
                     </button>
                 </li>
             </ul>
         </nav>
 
-        <!-- Main Content Area - right side where different views are displayed -->
+        <!-- Main Content -->
         <main class="main-content">
-            
-            <!-- DASHBOARD VIEW - Shows overview and statistics -->
+            <!-- Dashboard View -->
             <div class="view dashboard-view active" id="dashboardView">
-                <!-- Header for the dashboard view -->
                 <div class="view-header">
                     <h2>Dashboard</h2>
                 </div>
                 
-                <!-- Grid layout for statistics cards -->
                 <div class="stats-grid">
-                    <!-- Each stat-card shows a number and label -->
                     <div class="stat-card">
-                        <div class="stat-number" id="totalProjects">0</div> <!-- Number will be updated by JavaScript -->
+                        <div class="stat-number" id="totalProjects">0</div>
                         <div class="stat-label">Total Projects</div>
                     </div>
                     <div class="stat-card">
@@ -99,84 +77,65 @@
                     </div>
                 </div>
 
-                <!-- Dashboard sections with activity feed and quick actions -->
                 <div class="dashboard-sections">
-                    <!-- Recent Activity section -->
                     <div class="dashboard-section">
                         <h3>Recent Activity</h3>
-                        <!-- Container where JavaScript will add activity items -->
                         <div class="activity-feed" id="activityFeed">
                             <!-- Activity items will be populated by JavaScript -->
                         </div>
                     </div>
                     
-                    <!-- Quick Actions section -->
                     <div class="dashboard-section">
                         <h3>Quick Actions</h3>
                         <div class="quick-actions">
-                            <!-- Buttons to quickly add new projects and tasks -->
                             <button class="btn btn--primary" id="quickAddProject">+ New Project</button>
                             <button class="btn btn--secondary" id="quickAddTask">+ New Task</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Calendar section -->
                 <div class="dashboard-section calendar-section">
-                    <!-- Calendar header with navigation controls -->
                     <div class="calendar-header-controls">
                         <h3>Task Calendar</h3>
                         <div class="calendar-navigation">
-                            <!-- Buttons to navigate between months -->
                             <button class="btn btn--outline btn--sm" id="prevMonth">‹</button>
-                            <span class="calendar-month-year" id="calendarMonthYear"></span> <!-- Shows current month/year -->
+                            <span class="calendar-month-year" id="calendarMonthYear"></span>
                             <button class="btn btn--outline btn--sm" id="nextMonth">›</button>
                         </div>
                     </div>
-                    <!-- Container where JavaScript will render the calendar -->
                     <div class="calendar-container" id="calendarContainer">
                         <!-- Calendar will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- PROJECTS VIEW - Shows all projects in a grid -->
+            <!-- Projects View -->
             <div class="view projects-view" id="projectsView">
-                <!-- Header with title and add button -->
                 <div class="view-header">
                     <h2>Projects</h2>
                     <button class="btn btn--primary" id="addProjectBtn">+ Add Project</button>
                 </div>
                 
-                <!-- Grid container where project cards will be displayed -->
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Projects will be populated by JavaScript -->
                 </div>
             </div>
 
-            <!-- TASKS VIEW - Shows all tasks with filters and different view options -->
+            <!-- Tasks View -->
             <div class="view tasks-view" id="tasksView">
-                <!-- Header with controls -->
                 <div class="view-header">
                     <h2>Tasks</h2>
                     <div class="view-controls">
-                        <!-- Filter dropdowns to filter tasks -->
                         <div class="task-filters">
-                            <!-- Dropdown to filter by project -->
                             <select class="form-control" id="filterProject">
                                 <option value="">All Projects</option>
-                                <!-- Options will be populated by JavaScript -->
                             </select>
-                            
-                            <!-- Dropdown to filter by priority -->
                             <select class="form-control" id="filterPriority">
                                 <option value="">All Priorities</option>
                                 <option value="high">High</option>
                                 <option value="medium">Medium</option>
                                 <option value="low">Low</option>
                             </select>
-                            
-                            <!-- Dropdown to filter by status -->
                             <select class="form-control" id="filterStatus">
                                 <option value="">All Status</option>
                                 <option value="todo">To Do</option>
@@ -184,48 +143,36 @@
                                 <option value="completed">Completed</option>
                             </select>
                         </div>
-                        
-                        <!-- Toggle buttons to switch between list and kanban views -->
                         <div class="view-toggles">
                             <button class="btn btn--outline btn--sm view-toggle active" data-view-type="list">List</button>
                             <button class="btn btn--outline btn--sm view-toggle" data-view-type="kanban">Kanban</button>
                         </div>
-                        
-                        <!-- Button to add new task -->
                         <button class="btn btn--primary" id="addTaskBtn">+ Add Task</button>
                     </div>
                 </div>
 
-                <!-- List View for tasks (default view) -->
+                <!-- List View -->
                 <div class="task-list-view" id="taskListView">
-                    <!-- Container where task items will be displayed -->
                     <div class="tasks-container" id="tasksContainer">
                         <!-- Tasks will be populated by JavaScript -->
                     </div>
                 </div>
 
-                <!-- Kanban View for tasks (alternative view) -->
+                <!-- Kanban View -->
                 <div class="kanban-view hidden" id="kanbanView">
                     <div class="kanban-board">
-                        <!-- Three columns for different task statuses -->
-                        
-                        <!-- To Do column -->
                         <div class="kanban-column">
                             <h3 class="kanban-column-title">To Do</h3>
                             <div class="kanban-column-content" id="todoColumn">
                                 <!-- Tasks will be populated by JavaScript -->
                             </div>
                         </div>
-                        
-                        <!-- In Progress column -->
                         <div class="kanban-column">
                             <h3 class="kanban-column-title">In Progress</h3>
                             <div class="kanban-column-content" id="inProgressColumn">
                                 <!-- Tasks will be populated by JavaScript -->
                             </div>
                         </div>
-                        
-                        <!-- Completed column -->
                         <div class="kanban-column">
                             <h3 class="kanban-column-title">Completed</h3>
                             <div class="kanban-column-content" id="completedColumn">
@@ -238,32 +185,23 @@
         </main>
     </div>
 
-    <!-- PROJECT MODAL - Popup window for adding/editing projects -->
+    <!-- Project Modal -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal">
-            <!-- Modal header with title and close button -->
             <div class="modal-header">
-                <h3 id="projectModalTitle">Add Project</h3> <!-- Title changes based on add/edit -->
-                <button class="modal-close" id="closeProjectModal">×</button> <!-- X button to close -->
+                <h3 id="projectModalTitle">Add Project</h3>
+                <button class="modal-close" id="closeProjectModal">×</button>
             </div>
-            
-            <!-- Modal body with form -->
             <div class="modal-body">
-                <!-- Form for project data -->
                 <form id="projectForm">
-                    <!-- Project name input -->
                     <div class="form-group">
                         <label class="form-label" for="projectName">Project Name</label>
                         <input type="text" class="form-control" id="projectName" required>
                     </div>
-                    
-                    <!-- Project description textarea -->
                     <div class="form-group">
                         <label class="form-label" for="projectDescription">Description</label>
                         <textarea class="form-control" id="projectDescription" rows="3"></textarea>
                     </div>
-                    
-                    <!-- Project status dropdown -->
                     <div class="form-group">
                         <label class="form-label" for="projectStatus">Status</label>
                         <select class="form-control" id="projectStatus">
@@ -272,16 +210,12 @@
                             <option value="on-hold">On Hold</option>
                         </select>
                     </div>
-                    
-                    <!-- Project due date input -->
                     <div class="form-group">
                         <label class="form-label" for="projectDueDate">Due Date</label>
                         <input type="date" class="form-control" id="projectDueDate">
                     </div>
                 </form>
             </div>
-            
-            <!-- Modal footer with action buttons -->
             <div class="modal-footer">
                 <button type="button" class="btn btn--secondary" id="cancelProjectModal">Cancel</button>
                 <button type="submit" class="btn btn--primary" id="saveProject">Save Project</button>
@@ -289,40 +223,29 @@
         </div>
     </div>
 
-    <!-- TASK MODAL - Popup window for adding/editing tasks -->
+    <!-- Task Modal -->
     <div class="modal-overlay" id="taskModal">
         <div class="modal">
-            <!-- Modal header -->
             <div class="modal-header">
                 <h3 id="taskModalTitle">Add Task</h3>
                 <button class="modal-close" id="closeTaskModal">×</button>
             </div>
-            
-            <!-- Modal body with form -->
             <div class="modal-body">
                 <form id="taskForm">
-                    <!-- Task title input -->
                     <div class="form-group">
                         <label class="form-label" for="taskTitle">Task Title</label>
                         <input type="text" class="form-control" id="taskTitle" required>
                     </div>
-                    
-                    <!-- Task description textarea -->
                     <div class="form-group">
                         <label class="form-label" for="taskDescription">Description</label>
                         <textarea class="form-control" id="taskDescription" rows="3"></textarea>
                     </div>
-                    
-                    <!-- Project selection dropdown -->
                     <div class="form-group">
                         <label class="form-label" for="taskProject">Project</label>
                         <select class="form-control" id="taskProject" required>
                             <option value="">Select Project</option>
-                            <!-- Options will be populated by JavaScript -->
                         </select>
                     </div>
-                    
-                    <!-- Task priority dropdown -->
                     <div class="form-group">
                         <label class="form-label" for="taskPriority">Priority</label>
                         <select class="form-control" id="taskPriority">
@@ -331,8 +254,6 @@
                             <option value="high">High</option>
                         </select>
                     </div>
-                    
-                    <!-- Task status dropdown -->
                     <div class="form-group">
                         <label class="form-label" for="taskStatus">Status</label>
                         <select class="form-control" id="taskStatus">
@@ -341,16 +262,12 @@
                             <option value="completed">Completed</option>
                         </select>
                     </div>
-                    
-                    <!-- Task due date input -->
                     <div class="form-group">
                         <label class="form-label" for="taskDueDate">Due Date</label>
                         <input type="date" class="form-control" id="taskDueDate">
                     </div>
                 </form>
             </div>
-            
-            <!-- Modal footer with action buttons -->
             <div class="modal-footer">
                 <button type="button" class="btn btn--secondary" id="cancelTaskModal">Cancel</button>
                 <button type="submit" class="btn btn--primary" id="saveTask">Save Task</button>
@@ -358,10 +275,9 @@
         </div>
     </div>
 
-    <!-- Toast Notifications - Container for popup messages -->
+    <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- Link to JavaScript file - must be at the end so HTML loads first -->
     <script src="app.js"></script>
 </body>
 </html>
