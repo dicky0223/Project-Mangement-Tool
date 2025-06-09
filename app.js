@@ -7,6 +7,7 @@ class ProjectManager {
         this.currentEditingTask = null;
         this.currentView = 'dashboard';
         this.currentTaskView = 'list';
+        this.currentCalendarDate = new Date();
         
         // Wait for DOM to be ready
         if (document.readyState === 'loading') {
@@ -269,6 +270,21 @@ class ProjectManager {
                 this.renderTasks();
             });
         }
+
+        // Calendar navigation
+        const prevMonth = document.getElementById('prevMonth');
+        if (prevMonth) {
+            prevMonth.addEventListener('click', () => {
+                this.navigateCalendar(-1);
+            });
+        }
+
+        const nextMonth = document.getElementById('nextMonth');
+        if (nextMonth) {
+            nextMonth.addEventListener('click', () => {
+                this.navigateCalendar(1);
+            });
+        }
     }
 
     setupModalListeners() {
@@ -425,6 +441,7 @@ class ProjectManager {
     renderDashboard() {
         this.updateDashboardStats();
         this.renderActivityFeed();
+        this.renderCalendar();
     }
 
     updateDashboardStats() {
@@ -464,6 +481,134 @@ class ProjectManager {
                 </div>
             `;
         }).join('');
+    }
+
+    // Calendar functionality
+    renderCalendar() {
+        const calendarContainer = document.getElementById('calendarContainer');
+        const monthYearDisplay = document.getElementById('calendarMonthYear');
+        
+        if (!calendarContainer || !monthYearDisplay) return;
+
+        const year = this.currentCalendarDate.getFullYear();
+        const month = this.currentCalendarDate.getMonth();
+        
+        // Update month/year display
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
+
+        // Get first day of month and number of days
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay();
+
+        // Create calendar HTML
+        let calendarHTML = `
+            <div class="calendar-grid">
+                <div class="calendar-header">
+                    <div class="calendar-day-header">Sun</div>
+                    <div class="calendar-day-header">Mon</div>
+                    <div class="calendar-day-header">Tue</div>
+                    <div class="calendar-day-header">Wed</div>
+                    <div class="calendar-day-header">Thu</div>
+                    <div class="calendar-day-header">Fri</div>
+                    <div class="calendar-day-header">Sat</div>
+                </div>
+                <div class="calendar-body">
+        `;
+
+        // Add empty cells for days before the first day of the month
+        for (let i = 0; i < startingDayOfWeek; i++) {
+            calendarHTML += '<div class="calendar-day empty"></div>';
+        }
+
+        // Add days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const tasksForDay = this.tasks.filter(task => task.dueDate === dateString);
+            const isToday = dateString === new Date().toISOString().split('T')[0];
+            
+            let dayClasses = 'calendar-day';
+            if (tasksForDay.length > 0) dayClasses += ' has-tasks';
+            if (isToday) dayClasses += ' today';
+
+            calendarHTML += `
+                <div class="${dayClasses}" data-date="${dateString}">
+                    <div class="calendar-day-number">${day}</div>
+                    ${tasksForDay.length > 0 ? `<div class="calendar-task-count">${tasksForDay.length}</div>` : ''}
+                    ${tasksForDay.length > 0 ? this.renderCalendarTasks(tasksForDay) : ''}
+                </div>
+            `;
+        }
+
+        calendarHTML += `
+                </div>
+            </div>
+        `;
+
+        calendarContainer.innerHTML = calendarHTML;
+
+        // Add click listeners to calendar days
+        document.querySelectorAll('.calendar-day[data-date]').forEach(dayEl => {
+            dayEl.addEventListener('click', (e) => {
+                const date = e.currentTarget.getAttribute('data-date');
+                this.showTasksForDate(date);
+            });
+        });
+    }
+
+    renderCalendarTasks(tasks) {
+        if (tasks.length === 0) return '';
+        
+        const maxVisible = 2;
+        const visibleTasks = tasks.slice(0, maxVisible);
+        const remainingCount = tasks.length - maxVisible;
+        
+        let tasksHTML = '<div class="calendar-tasks">';
+        
+        visibleTasks.forEach(task => {
+            const priorityClass = `priority-${task.priority}`;
+            tasksHTML += `
+                <div class="calendar-task ${priorityClass}" title="${task.title}">
+                    ${task.title.length > 15 ? task.title.substring(0, 15) + '...' : task.title}
+                </div>
+            `;
+        });
+        
+        if (remainingCount > 0) {
+            tasksHTML += `<div class="calendar-task-more">+${remainingCount} more</div>`;
+        }
+        
+        tasksHTML += '</div>';
+        return tasksHTML;
+    }
+
+    navigateCalendar(direction) {
+        const newDate = new Date(this.currentCalendarDate);
+        newDate.setMonth(newDate.getMonth() + direction);
+        this.currentCalendarDate = newDate;
+        this.renderCalendar();
+    }
+
+    showTasksForDate(date) {
+        const tasksForDate = this.tasks.filter(task => task.dueDate === date);
+        
+        if (tasksForDate.length === 0) {
+            this.showToast(`No tasks scheduled for ${this.formatDate(date)}`, 'info');
+            return;
+        }
+
+        // Create a simple modal or alert showing tasks for the selected date
+        const tasksList = tasksForDate.map(task => {
+            const project = this.projects.find(p => p.id === task.projectId);
+            return `• ${task.title} (${project ? project.name : 'Unknown Project'}) - ${task.priority} priority`;
+        }).join('\n');
+
+        alert(`Tasks for ${this.formatDate(date)}:\n\n${tasksList}`);
     }
 
     // Projects Rendering
